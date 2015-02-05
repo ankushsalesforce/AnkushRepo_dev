@@ -1,0 +1,16 @@
+<apex:page controller="TwoButtons" >
+    <apex:pageBlock id="am1">
+        <apex:form id="f1">
+            <apex:actionSupport event="onclick" action="{!HideOther}" reRender="theButton" immediate="true" />
+            <apex:commandButton value="Save1" id="theButton" action="{!HideOther}"  />
+                </apex:form>
+                    </apex:pageBlock>
+                <apex:pageBlock id="am2" >
+                <apex:form id="f2">
+            <apex:pageBlockSection id="pageBlocksec">
+                <apex:commandButton action="{!save}" value="Save2" id="theButton1" rendered="{!Hideme}" reRender="am1"/>
+               <!-- <apex:actionSupport event="onclick" action="{!HideOther1}" reRender="am1"  />-->
+            </apex:pageBlockSection>  
+        </apex:form>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,42 @@
+<apex:page controller="DeleteWrapper">
+    <apex:form id="theform">
+        <apex:actionFunction name="actionFunName" action="{!Deletes}" reRender="content"/>
+        <apex:actionFunction name="actionFunName1" action="{!DeleteWrapper}" rendered="{!doness}" />
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!Accnt}" var="it" >
+                      <apex:column >
+                         <apex:inputCheckbox value="{!it.selected}"/>
+                      </apex:column>
+                      <apex:column value="{!it.lst.name}"/>
+                      <apex:column value="{!it.lst.id}"/>
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+      <apex:commandButton onclick="showAlert()" value="Deletes" id="out" oncomplete="done()"/>
+    </apex:form> 
+ <div id="content1">
+ <script>
+   function done()
+            {   
+
+               actionFunName1();
+                alert('done');
+                
+            }
+            </script>
+
+ </div>
+        <script>
+          function showAlert()
+            {   
+                
+               alert('hi');
+               actionFunName();
+                alert('pressed');
+
+            }
+
+        </script>
+    
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page standardController="opportunity" extensions="ContactList">
+    <apex:form >
+         <apex:pageBlock title="My Content">
+
+        <apex:pageBlockTable value="{!Contactss}" var="item">
+        <apex:column >
+                <apex:outputLink target="_blank" value="/{!item.id}">{!item.id}</apex:outputLink>
+            </apex:column>
+
+           <apex:column value="{!item.Accountid}"/>
+           <apex:column value="{!item.phone}"/>
+
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,133 @@
+<apex:page controller="PollSurveyapp_Controller" showheader="false" action="{!calculate}" cache="false" expires="01">
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:100%;
+    }
+    #wrapper{
+        width:500px;
+        margin:0 auto;
+    }
+    .box-container{
+        position:relative;
+        width:480px;
+        margin:20px 0px 10px 0px;
+        _margin-top:10px;
+        overflow:hidden;
+        -moz-border-radius:15px;
+        -webkit-border-radius:15px;
+    }
+    .boxgloss{
+        background:#FFF;
+        position:absolute;
+        width:400px;
+        height:50%;
+        _height:130px;
+        top:2px;
+        left:2px;
+        opacity:.2;
+        filter: alpha(opacity=20);
+        -moz-border-radius:12px;
+        -webkit-border-radius:12px;
+    }
+    .boxcontents{
+        background:#FFF;
+        margin:20px;
+        padding:20px;
+    }
+    .clear{
+        display:block;
+        clear:both;
+        height:0;
+        line-height:0;
+    }
+    .bg-black{
+        background:#000;
+    }
+    .bg-red{
+        background:#A00;
+    }
+    .bg-green{
+        background:#060;
+    }
+    .bg-blue{
+        background:#009;
+    }
+    .brd-black{
+        border:solid 2px #000;
+    }
+    .brd-red{
+        border:solid 2px #A00;
+    }
+    .brd-green{
+        border:solid 2px #060;
+    }
+    .brd-blue{
+        border:solid 2px #009;
+    }
+    .left{
+        float:left;
+        padding-right:10px;
+    }
+    .right{
+        float:right;
+        padding-left:10px;
+    }
+  .center{
+        text-align:center;
+  }
+</style>
+
+<title> Poll Results </title>
+<div id="wrapper">
+<div class="box-container bg-red">
+    <div class="boxgloss"></div>
+    <div class="boxcontents brd-red">
+           
+           
+           {!survey.Question__c}
+              
+               
+               <!--         <body bgcolor="#CFEEF8">
+                        <h4> {!survey.Question__c} </h4> -->
+                        <script language="Javascript1.2">
+
+
+
+                                    var graphimageP="{!URLFOR($Resource.Poll)}"
+                                    
+                                    //DEFINE GRAPH VALUES [Item name, Percentage value]
+                                    var graphv=new Array()
+                                    graphv[0]=["{!survey.Answer_1__c}","{!totalanswer1}"+"%"];
+                                    graphv[1]=["{!survey.Answer_2__c}","{!totalanswer2}"+"%"];
+                                    graphv[2]=["{!survey.Answer_3__c}","{!totalanswer3}"+"%"];
+                                    graphv[3]=["{!survey.Answer_4__c}","{!totalanswer4}"+"%"];
+                                    
+                                    //YOU CAN DEFINE MULTIPLE GRAPHS, eg:
+                                    //var graphz=new Array()
+                                    
+                                    
+                                    function graphitP(g,gwidth){
+                                    
+                                    outputP='<table border="0" cellspacing="0" cellpadding="0">'
+                                    for (i=0;i<g.length;i++){
+                                    calwidthP=gwidth*(parseInt(g[i][1])/100);
+                                    if(g[i][0] != '')
+                                    outputP+='<tr><td>'+g[i][0]+'&nbsp;</td><td><img src="'+graphimageP+'" width="'+calwidthP+'" height="10"> '+g[i][1]+'</td></tr>';
+                                    }
+                                    outputP+='</table>';
+                                    document.write(outputP);
+                                    }
+                                    
+                                    //CALL GRAPHIT FUNCTION
+                                    //graphitP(NAME OF GRAPH ARRAY, MAXIMUM WIDTH IN PIXELS)
+                                    graphitP(graphv,200)
+                            </script>
+</div>
+    <div class="clear"></div>
+  </div>  
+</div>                                
+                         
+</apex:page>

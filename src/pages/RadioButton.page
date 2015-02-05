@@ -1,0 +1,28 @@
+<apex:page Controller="RadioButtonDisplay" sidebar="false">
+    <apex:form >
+        <apex:pageBlock id="frst" >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!LSTCON}" id="pag1" var="pge">
+                    <apex:column headervalue="Set as Primary">                    
+                       <apex:actionsupport action="{!selectcon}" event="onclick" rerender="seconed,pag2">  
+                        <input type="radio" />                    
+                            <apex:param name="conid" value="{!pge.Id}">
+                        </apex:param></apex:actionsupport>                            
+                    </apex:column>   
+                    <apex:column id="col" headerValue="Name">
+                        <apex:outputfield value="{!pge.Name}"/>
+                    </apex:column>    
+                </apex:pageBlockTable>                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="seconed">
+            <apex:pageBlockTable value="{!selectedContact}" id="pag2" var="pge2">
+                    <apex:column headervalue="Set as Primary">                    
+                    </apex:column>   
+                    <apex:column id="col" headerValue="Name">
+                        <apex:outputfield value="{!pge2.Name}"/>
+                    </apex:column>    
+                </apex:pageBlockTable>   
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

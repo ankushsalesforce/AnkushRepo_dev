@@ -1,0 +1,31 @@
+<apex:page standardController="Account" extensions="AccountSearchController">
+    <apex:form >
+            <apex:pageBlock title="Search Account Page" mode="edit">
+                    Account Name:- <apex:inputText value="{!accountName}" id="theTextInput" label="Account Name"/>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!Records}" value="Get Accounts " reRender="display"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+            
+            <apex:outputPanel id="display">
+                <apex:pageBlock title="Records" id="records" rendered="{!check}">
+                    <apex:pageBlockTable value="{!Accounts}" var="item">
+                       <apex:column headervalue="Account Name">
+                            <apex:commandLink action="{!redirectPage}">
+                                <apex:param name="name1" value="{!item.id}"/>
+                                {!item.Name}
+                            </apex:commandLink>
+                       </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:outputPanel>
+            
+            <apex:outputPanel id="displayButton" rendered="{!show}">
+                <apex:pageBlock id="theId" title="Create new">
+                    <apex:pageBlockButtons >
+                        <apex:commandButton action="{!redirectPageToContact}" value="Create" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </apex:outputPanel>
+    </apex:form>  
+</apex:page>

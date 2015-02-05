@@ -1,0 +1,15 @@
+<apex:page controller="populateUser" >
+<apex:form >
+    <apex:pageBlock title="My Content">
+
+        <apex:pageBlockTable value="{!lstwrp}" var="item">
+
+            <apex:column headerValue="select"> 
+            <apex:inputCheckbox value="{!item.check}"/>
+             </apex:column>
+            <apex:column value="{!item.u.name}"/>
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock> 
+  </apex:form>                
+</apex:page>

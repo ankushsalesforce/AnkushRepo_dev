@@ -1,0 +1,6 @@
+<apex:page controller="PostTwitterController">
+  <apex:form >
+      <apex:inputTextArea value="{!newTweet}" rows="5" cols="50"/><br/>
+      <apex:commandButton value="Post TO Twitter" action="{!submittotwitter}" />
+  </apex:form>
+</apex:page>

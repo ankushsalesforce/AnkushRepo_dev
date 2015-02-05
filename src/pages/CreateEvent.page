@@ -1,0 +1,11 @@
+<apex:page standardController="Account" extensions="CreateEvent" action="{!EventMethod}">
+    <apex:form > 
+       <b>Event Creted</b>
+        <!--<apex:inputField value="{!ent.ownerId}"/>-->
+        <apex:commandButton action="{!save}" value="Saves" id="theButton"/>
+                       <apex:selectList value="{!userss}" size="1" id="values">
+                    <!-- <apex:actionSupport event="onclick" reRender="newpicklistvalue1" />-->
+                      <apex:selectOptions value="{!optionss}"/>
+                  </apex:selectList>
+     </apex:form>
+</apex:page>

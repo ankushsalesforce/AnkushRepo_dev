@@ -1,0 +1,64 @@
+{
+    "properties": [
+        {
+            "modifiers": [], 
+            "name": "dates", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 2
+            }, 
+            "type": "String"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "DateSearches", 
+            "parameters": [
+                {
+                    "type": "StandardController", 
+                    "name": "stdController"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 3
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": "AnkushTest", 
+    "name": "DateSearches", 
+    "tableDeclaration": {
+        "type": "DateSearches", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "DateSearches"
+    }, 
+    "key": "01pi0000005x4lFAAQ", 
+    "variables": [
+        {
+            "type": "StandardController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 55, 
+                "line": 3
+            }, 
+            "name": "stdController"
+        }
+    ], 
+    "id": "01pi0000005x4lFAAQ", 
+    "methods": []
+}

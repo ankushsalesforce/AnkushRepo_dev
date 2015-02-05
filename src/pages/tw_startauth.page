@@ -1,0 +1,2 @@
+<apex:page controller="TwitterController" action="{!authorize}">
+</apex:page>

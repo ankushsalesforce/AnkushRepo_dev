@@ -1,0 +1,24 @@
+<apex:page controller="ColorPicklist" id="thePage">
+    <apex:form id="theForm">
+                <apex:selectList value="{!selectedCountry1}" multiselect="false" size="1" id="myHeader" onchange="getValue()" >
+                <apex:selectOption itemValue="Red" itemLabel="red" />
+                <apex:selectOption itemValue="yellow" itemLabel="yellow"/>
+                <apex:selectOption itemValue="United Kingdom" itemLabel="UK"/>
+                </apex:selectList>
+                <apex:inputText id="Change"/>
+    </apex:form>        
+ <script>
+function getValue()
+  {
+  alert(document.getElementById("thePage:theForm:myHeader"));
+  var x=document.getElementById("thePage:theForm:myHeader");
+  alert(x.value);
+   if(x.value == "Red")
+  {
+    document.getElementById("thePage:theForm:Change").style.backgroundColor = "red";  }
+ }
+</script>
+    <apex:form >
+    </apex:form>
+   
+</apex:page>

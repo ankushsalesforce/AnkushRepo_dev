@@ -1,0 +1,525 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": "AnkushTest", 
+    "name": "AttachAccountTriggerHandler", 
+    "tableDeclaration": {
+        "type": "AttachAccountTriggerHandler", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 3
+        }, 
+        "name": "AttachAccountTriggerHandler"
+    }, 
+    "key": "01pi0000005w1KwAAI", 
+    "variables": [
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 35, 
+                    "line": 13
+                }, 
+                {
+                    "column": 35, 
+                    "line": 50
+                }
+            ], 
+            "location": {
+                "column": 55, 
+                "line": 4
+            }, 
+            "name": "emlst"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 5
+            }, 
+            "name": "emails"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 29, 
+                    "line": 35
+                }, 
+                {
+                    "column": 20, 
+                    "line": 40
+                }
+            ], 
+            "location": {
+                "column": 20, 
+                "line": 6
+            }, 
+            "name": "deleteCaseList"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 87, 
+                    "line": 16
+                }, 
+                {
+                    "column": 28, 
+                    "line": 15
+                }, 
+                {
+                    "column": 38, 
+                    "line": 30
+                }
+            ], 
+            "location": {
+                "column": 31, 
+                "line": 7
+            }, 
+            "name": "domMap"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 29, 
+                    "line": 19
+                }
+            ], 
+            "location": {
+                "column": 30, 
+                "line": 8
+            }, 
+            "name": "caseIdEmailMap"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 29, 
+                    "line": 16
+                }, 
+                {
+                    "column": 82, 
+                    "line": 43
+                }, 
+                {
+                    "column": 120, 
+                    "line": 61
+                }, 
+                {
+                    "column": 28, 
+                    "line": 54
+                }, 
+                {
+                    "column": 57, 
+                    "line": 55
+                }
+            ], 
+            "location": {
+                "column": 28, 
+                "line": 9
+            }, 
+            "name": "domainAccNameMap"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 29, 
+                    "line": 18
+                }, 
+                {
+                    "column": 143, 
+                    "line": 47
+                }
+            ], 
+            "location": {
+                "column": 17, 
+                "line": 10
+            }, 
+            "name": "sid"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 25, 
+                    "line": 23
+                }, 
+                {
+                    "column": 29, 
+                    "line": 27
+                }, 
+                {
+                    "column": 38, 
+                    "line": 32
+                }, 
+                {
+                    "column": 80, 
+                    "line": 32
+                }, 
+                {
+                    "column": 28, 
+                    "line": 33
+                }
+            ], 
+            "location": {
+                "column": 21, 
+                "line": 11
+            }, 
+            "name": "setOfToAndCcAddress"
+        }, 
+        {
+            "type": "EmailMessage", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 37, 
+                    "line": 18
+                }, 
+                {
+                    "column": 48, 
+                    "line": 19
+                }, 
+                {
+                    "column": 60, 
+                    "line": 19
+                }, 
+                {
+                    "column": 24, 
+                    "line": 25
+                }, 
+                {
+                    "column": 62, 
+                    "line": 35
+                }, 
+                {
+                    "column": 24, 
+                    "line": 14
+                }
+            ], 
+            "location": {
+                "column": 30, 
+                "line": 13
+            }, 
+            "name": "em"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 49, 
+                    "line": 23
+                }
+            ], 
+            "location": {
+                "column": 32, 
+                "line": 22
+            }, 
+            "name": "s"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 53, 
+                    "line": 27
+                }
+            ], 
+            "location": {
+                "column": 36, 
+                "line": 26
+            }, 
+            "name": "s"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 38, 
+                    "line": 31
+                }, 
+                {
+                    "column": 65, 
+                    "line": 32
+                }, 
+                {
+                    "column": 109, 
+                    "line": 32
+                }, 
+                {
+                    "column": 57, 
+                    "line": 33
+                }
+            ], 
+            "location": {
+                "column": 32, 
+                "line": 30
+            }, 
+            "name": "key"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 33, 
+                    "line": 63
+                }, 
+                {
+                    "column": 24, 
+                    "line": 71
+                }, 
+                {
+                    "column": 16, 
+                    "line": 70
+                }, 
+                {
+                    "column": 48, 
+                    "line": 73
+                }
+            ], 
+            "location": {
+                "column": 27, 
+                "line": 41
+            }, 
+            "name": "listOfNewContact"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 17, 
+                    "line": 45
+                }, 
+                {
+                    "column": 103, 
+                    "line": 61
+                }, 
+                {
+                    "column": 32, 
+                    "line": 55
+                }
+            ], 
+            "location": {
+                "column": 28, 
+                "line": 42
+            }, 
+            "name": "accNameIdMap"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 30, 
+                    "line": 44
+                }
+            ], 
+            "location": {
+                "column": 27, 
+                "line": 43
+            }, 
+            "name": "actLst"
+        }, 
+        {
+            "type": "Account", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 34, 
+                    "line": 45
+                }, 
+                {
+                    "column": 43, 
+                    "line": 45
+                }
+            ], 
+            "location": {
+                "column": 25, 
+                "line": 44
+            }, 
+            "name": "ac"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 26, 
+                    "line": 48
+                }, 
+                {
+                    "column": 26, 
+                    "line": 49
+                }, 
+                {
+                    "column": 47, 
+                    "line": 52
+                }, 
+                {
+                    "column": 46, 
+                    "line": 57
+                }, 
+                {
+                    "column": 55, 
+                    "line": 59
+                }, 
+                {
+                    "column": 52, 
+                    "line": 60
+                }, 
+                {
+                    "column": 33, 
+                    "line": 61
+                }, 
+                {
+                    "column": 56, 
+                    "line": 62
+                }, 
+                {
+                    "column": 32, 
+                    "line": 56
+                }, 
+                {
+                    "column": 74, 
+                    "line": 56
+                }, 
+                {
+                    "column": 24, 
+                    "line": 53
+                }, 
+                {
+                    "column": 24, 
+                    "line": 75
+                }, 
+                {
+                    "column": 16, 
+                    "line": 74
+                }, 
+                {
+                    "column": 44, 
+                    "line": 77
+                }
+            ], 
+            "location": {
+                "column": 26, 
+                "line": 47
+            }, 
+            "name": "casesToUpdate"
+        }, 
+        {
+            "type": "EmailMessage", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 64, 
+                    "line": 57
+                }, 
+                {
+                    "column": 73, 
+                    "line": 59
+                }, 
+                {
+                    "column": 70, 
+                    "line": 60
+                }, 
+                {
+                    "column": 51, 
+                    "line": 61
+                }, 
+                {
+                    "column": 78, 
+                    "line": 61
+                }, 
+                {
+                    "column": 50, 
+                    "line": 56
+                }, 
+                {
+                    "column": 92, 
+                    "line": 56
+                }, 
+                {
+                    "column": 20, 
+                    "line": 51
+                }
+            ], 
+            "location": {
+                "column": 30, 
+                "line": 50
+            }, 
+            "name": "em"
+        }, 
+        {
+            "type": "Contact", 
+            "modifiers": [], 
+            "references": [
+                {
+                    "column": 33, 
+                    "line": 59
+                }, 
+                {
+                    "column": 33, 
+                    "line": 60
+                }, 
+                {
+                    "column": 33, 
+                    "line": 62
+                }, 
+                {
+                    "column": 54, 
+                    "line": 63
+                }
+            ], 
+            "location": {
+                "column": 41, 
+                "line": 58
+            }, 
+            "name": "newContact"
+        }
+    ], 
+    "id": "01pi0000005w1KwAAI", 
+    "methods": [
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "afterInsert", 
+            "parameters": [
+                {
+                    "type": "LIST", 
+                    "name": "emlst"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 4
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

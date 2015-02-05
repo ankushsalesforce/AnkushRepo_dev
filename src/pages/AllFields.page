@@ -1,0 +1,27 @@
+<apex:page controller="Allfields" sidebar="true">
+    <apex:form >
+        <apex:pageBlock title="EnterIDs" >
+            <apex:pageblockSection columns="2">
+                <apex:pageBlockSectionItem Id="Object" dataTitle="Object Name ">
+                    Ojbect<apex:inputText value="{!objects}" label="Enter Value" title="object name"/>
+                 </apex:pageBlockSectionItem>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="2">    
+                <apex:pageBlockSectionItem Id="idOfFirstSection">
+                    idOffirstRecord <apex:inputText value="{!idOffirstRecord}" label="Enter Value" title="EnterID"/>
+                 </apex:pageBlockSectionItem> 
+                 <apex:commandButton value="getRecords" action="{!Records}" reRender="display"/>                
+            </apex:pageblockSection>
+        </apex:pageBlock>
+        <apex:outputPanel id="display">
+            <apex:pageBlock title="Fields" rendered="{!check}">
+                <apex:pageBlockSection columns="3">
+                    <apex:pageblockTable value="{!listOfFields}" var="items">
+                        <apex:column value="{!items}" headerValue="Fields"/>                      
+                    </apex:pageblockTable>                 
+  
+                </apex:pageBlockSection>           
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

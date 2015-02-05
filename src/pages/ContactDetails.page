@@ -1,0 +1,21 @@
+<apex:page showHeader="false" controller="ContactDetailsController">
+    <apex:form >
+    
+    <apex:pageBlock title="Accounts And  Contacts" >
+        <apex:pageBlockSection >
+          <apex:selectList value="{!countries}" multiselect="False" size="1" label="Select Account" >
+           <apex:selectOptions value="{!item}" id="st"/>
+        </apex:selectList>
+        
+        <apex:pageBlockSection >
+         
+         <apex:inputText id="fName"  value="{!fName}" label="Last name"/>
+         
+          </apex:pageBlockSection>  
+            <apex:commandButton action="{!register}" value="Save" id="theButton"/>
+        
+                 
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

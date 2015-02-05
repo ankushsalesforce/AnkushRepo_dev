@@ -1,0 +1,82 @@
+<apex:page standardController="campaign" extensions="TwitterController" tabStyle="Campaign" action="{!getSearchTag}">
+<link href="{!URLFOR($Resource.TwitterCompaugnCSS, 'css/css/instagrame.css')}" rel="stylesheet" />
+<link href="{!URLFOR($Resource.TwitterCompaugnCSS, 'css/css/bootstrap.min.css')}" rel="stylesheet" />
+<script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+ </script>
+ <apex:sectionHeader title="Social Campaign" subtitle="{!Campaign.Name}" />
+    <chatter:feed entityId="{!Campaign.Id}"/>
+    <div class="pull-right instagram-logo">
+    <div class="text-right">
+        <apex:image value="{!$Resource.TwitterLogo}" width="30%" height="30%" />
+    </div>
+  </div>
+<apex:form id="changeStatusForm">
+            <apex:pageMessages />
+            <br/>
+            <div class = "pbHeader" style = "text-align:center;">
+                <apex:commandButton action="{!back}" value="Back"/>
+                <apex:commandButton action="{!importAll}" value="Import All"/>
+                <apex:commandButton action="{!deleteAll}" value="Delete All"/>
+         </div>
+         <br/>
+           
+    <b>Select All</b> &nbsp;  <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+          
+        <div class="col-md-12">
+            <apex:repeat value="{!root.statuses}" var="item">
+              <div class="col-md-3 marg-bottom main-img-wrap">
+                <div class="xoverlay x-simple"> 
+                <apex:repeat value="{!item.entities.media}" var="items">
+                    <apex:outputLink value="{!items.url}" target="_blank">
+                        <apex:image value="{!items.media_url}"/>
+                    </apex:outputLink>
+                </apex:repeat>
+                </div>
+                <div class="img-details-inst checkbox-align">
+                  <apex:inputCheckbox value="{!item.is_Selected}"  id="inputId" styleClass="checkbox-align"/>
+                  <div class="img-username"><span><apex:outputText value="{!item.user.screen_name}" style="font-size:12px"/></span></div>
+                  <div class="user-pic-inst"><apex:image value="{!item.user.profile_image_url}" /></div>
+                </div>
+              </div>
+          </apex:repeat>
+        </div>
+        <!--    
+            <apex:pageBlockTable value="{!root.statuses}" var="item">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!item.is_Selected}" id="inputId"/>
+                </apex:column>
+                <apex:column headerValue="User Pic">
+                    <apex:image value="{!item.user.profile_image_url}" styleClass="twitterPicture"/>
+                </apex:column>
+                <apex:column headerValue="User">
+                    <apex:outputText value="{!item.user.name}"/>
+                </apex:column>
+                <apex:column headerValue="Content">
+
+                        <apex:pageBlockTable value="{!item.entities.media}" var="items">
+                            <apex:column >
+                            <apex:outputLink value="{!items.url}" target="_blank" styleClass="twitterLink">
+                                <apex:image value="{!items.media_url}" styleClass="twitterPicture" />
+                            </apex:outputLink>
+                        </apex:column>
+                        </apex:pageblocktable>
+
+                </apex:column>
+                <apex:column headerValue="Text" width="20%">
+                    <apex:outputText value="{!item.text}" style="color:blue"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        -->    
+    </apex:form>
+</apex:page>

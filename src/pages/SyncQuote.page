@@ -1,0 +1,2 @@
+<apex:page standardController="Quote_Line_Items__c" extensions="SyncQuote">
+</apex:page>

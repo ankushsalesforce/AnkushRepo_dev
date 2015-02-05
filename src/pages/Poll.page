@@ -1,0 +1,130 @@
+<apex:page showheader="false" controller="PollSurveyapp_Controller" cache="false" expires="01">
+
+ <style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:100%;
+    }
+    #wrapper{
+        width:500px;
+        margin:0 auto;
+    }
+    .box-container{
+        position:relative;
+        width:400px;
+        margin:20px auto 10px auto;
+        _margin-top:10px;
+        overflow:hidden;
+        -moz-border-radius:15px;
+        -webkit-border-radius:15px;
+    }
+    .boxgloss{
+        background:#FFF;
+        //position:absolute;
+        width:350px;
+        height:50%;
+        _height:130px;
+        top:2px;
+        left:2px;
+        opacity:.2;
+        filter: alpha(opacity=20);
+        -moz-border-radius:12px;
+        -webkit-border-radius:12px;
+    }
+    .boxcontents{
+        background:#FFF;
+        margin:20px;
+        padding:20px;
+    }
+    .clear{
+        display:block;
+        clear:both;
+        height:0;
+        line-height:0;
+    }
+    .bg-black{
+        background:#000;
+    }
+    .bg-red{
+        background:#A00;
+    }
+    .bg-green{
+        background:#060;
+    }
+    .bg-blue{
+        background:#009;
+    }
+    .brd-black{
+        border:solid 2px #000;
+    }
+    .brd-red{
+        border:solid 2px #A00;
+    }
+    .brd-green{
+        border:solid 2px #060;
+    }
+    .brd-blue{
+        border:solid 2px #009;
+    }
+    .left{
+        float:left;
+        padding-right:10px;
+    }
+    .right{
+        float:right;
+        padding-left:10px;
+    }
+  .center{
+        text-align:center;
+  }
+</style>
+
+ 
+ <script>
+ function openresultsPage(){
+            window.open("http://forcetreedemos-developer-edition.ap1.force.com/forcetreedemos/apex/Pollresults?core.apexpages.devmode.url=1","self","height=350,width=500,status=yes,toolbar=no,menubar=no,location=no,resizable=no");
+            return false;
+    }
+</script>
+<div id="wrapper">
+<div class="box-container bg-red">
+    <div class="boxgloss"></div>
+    <div class="boxcontents brd-red">
+
+<apex:outputpanel rendered="{!IF(enablepoll==TRUE,TRUE,FALSE)}">
+              
+            <apex:outputpanel id="pollcomponent">
+            <apex:form >
+                 {!survey.Question__c}   
+                <table>
+                     <tr> <td>
+                  
+                     <apex:selectRadio value="{!answer}" disabled="false">
+                        <apex:selectOptions value="{!items}"/>
+                        <apex:actionSupport event="onclick" reRender="otheropt" status="LoadStatus" action="{!clearotheroption}"/>                        
+                     </apex:selectRadio> 
+                     
+                        </td>  
+                        <td>
+                        <apex:actionStatus id="LoadStatus">
+                           <apex:facet name="start">
+                               <img src="/img/loading.gif"/>    
+                           </apex:facet>                               
+                       </apex:actionStatus>
+                       </td>              
+                     </tr>
+              </table>  
+          <apex:outputPanel id="otheropt"><apex:outputpanel rendered="{!answer == 'Other'}"> <table> <tr> <td> Enter your option </td> <td> <apex:inputtext value="{!otheranswer}"/> </td> </tr></table> </apex:outputpanel></apex:outputPanel>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandbutton value="Vote" action="{!savevote}" rerender="pollcomponent" status="LoadStatus" /> &nbsp; Total Votes: <apex:outputfield value="{!survey.Total_Responses__c}"/> || <apex:outputpanel rendered="{!IF(survey.Total_Responses__c > 0,TRUE,FALSE)}"><a href="#" onclick="openresultsPage()"> View Results </a> </apex:outputpanel>
+         <br/> 
+          
+         </apex:form>
+         </apex:outputpanel> 
+</apex:outputpanel>
+</div>
+    <div class="clear"></div>
+  </div>  
+</div>           
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="DateSearches">
+    <apex:form >
+          Please enter in Date format   <apex:inputText value="{!dates}"/>
+          <apex:commandButton action="{!Search}" value=" Search" reRender="test"/>
+          <apex:outputPanel id="test">
+          <apex:pageBlock rendered="{!check}">
+              <apex:pageBlockTable value="{!Accountinfo}" var="item">
+                  <apex:column value="{!item.id}" />
+              </apex:pageBlockTable>
+          </apex:pageBlock>
+        </apex:outputPanel>  
+    </apex:form>
+</apex:page>

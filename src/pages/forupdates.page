@@ -1,0 +1,12 @@
+<apex:page showheader="false" controller="forupdate">
+ <apex:form >
+     <apex:pageBlock >
+         <apex:pageblockSection >
+             <apex:dataTable value="{!up}" var="ff" border="1" cellpadding="2" cellspacing="2">
+                 <apex:column value="{!ff.id}" headerValue="Id"/>
+                  <apex:column value="{!ff.name}" headerValue="name"/>
+             </apex:datatable>
+         </apex:pageblockSection>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

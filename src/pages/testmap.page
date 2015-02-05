@@ -1,0 +1,15 @@
+<apex:page controller="TestMapController">
+     <apex:pageblock title="Map Usage On VF">
+         <apex:pageBlockTable value="{!data1}" var="d">
+             <apex:column headerValue="Account Name">
+                 {!d}
+             </apex:column>
+             <apex:column headerValue="Duplicate Count">
+                 {!data1[d]}
+             </apex:column>
+         </apex:pageBlockTable>
+         totalNo:<apex:outputText value="{!totalcount}"/><p>
+         Date:<apex:outputText value="{!myydate}"/></p>
+ 
+     </apex:pageblock>
+</apex:page>

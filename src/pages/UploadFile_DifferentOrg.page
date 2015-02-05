@@ -1,0 +1,5 @@
+<apex:page controller="UploadFile_DifferentOrg">
+    <apex:form >
+        <apex:commandButton value="Login" action="{!login}"/>
+    </apex:form>
+</apex:page>

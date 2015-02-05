@@ -1,0 +1,14 @@
+<apex:page standardController="TestConatct__c" extensions="ExtensionClass">
+    <apex:form >
+      <apex:pageBlock title="Child List">  
+         <apex:commandButton value="Add New" action="{!AddNew}" rerender="wtable"/> 
+
+         <apex:pageBlockTable value="{!lists}" var="item" id="wtable"> 
+            <apex:column headerValue="Account">
+          </apex:column>
+          <apex:column headerValue="Field 1">
+           </apex:column>
+           </apex:pageBlockTable>      
+     </apex:pageBlock>
+   </apex:form>
+</apex:page>

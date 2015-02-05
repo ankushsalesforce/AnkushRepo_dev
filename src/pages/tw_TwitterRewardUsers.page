@@ -1,0 +1,70 @@
+<apex:page standardController="Campaign" extensions="TwitterController" tabStyle="Campaign">
+
+<style>
+    .TwitterPicture{
+        margin: 3px;
+        width: 75px;
+    }
+    .TwitterPictureProfile{
+        margin: 3px;
+        width: 35px;
+    }
+    .TwitterCaption{
+        word-break: break-word;
+        width: 250px;
+    }
+    </style>
+
+    <apex:sectionHeader title="Social Campaign" subtitle="{!Campaign.Name}" />  
+    <apex:form id="changeStatusForm">
+
+
+        <apex:pageBlock id="pic_preview" rendered="{!renderTop}">
+            <apex:pageMessages />
+            <apex:pageBlockButtons title="Number of selected winners:">
+                <apex:commandButton action="{!rewardUsers}" value="Reward Selected Users"/>
+                <apex:commandButton action="{!resetAll}" value="Reset All"/>
+            </apex:pageBlockButtons>
+            <apex:repeat value="{!selectedPictures}" var="select">
+                <apex:outputLink value="{!select.URLContent__c}" target="_blank" styleClass="InstagramLink">
+                    <apex:image value="{!select.URL__c}" styleClass="TwitterPicture"/>
+                </apex:outputLink>
+            </apex:repeat>
+        </apex:pageBlock>
+
+
+
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!back}" value="Back"/>
+                <apex:commandButton action="{!confirmSelection}" value="Confirm Selection" reRender="changeStatusForm,pic_preview"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!pictures}" var="item">
+                <apex:column >
+                    <apex:inputCheckbox value="{!item.SelectedPicture__c}"/>
+                </apex:column>
+                <apex:column headerValue="User Pic">
+                    <apex:image value="{!item.UserPicURL__c}" styleClass="TwitterPictureProfile"/>
+                </apex:column>
+                <apex:column headerValue="User">
+                    <apex:outputText value="{!item.Username__c}"/>
+                </apex:column>
+                <apex:column headerValue="Content">
+                    <apex:outputLink value="{!item.URLContent__c}" target="_blank" styleClass="InstagramLink">
+                        <apex:image value="{!item.URL__c}" styleClass="TwitterPicture"/>
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column styleClass="TwitterCaption" headerValue="Text">
+                    <apex:outputText value="{!item.Text__c}" />
+                </apex:column>
+                <apex:column headerValue="Likes">
+                    <apex:outputText value="{!item.NumLikes__c} Likes" />
+                </apex:column>
+                <apex:column headerValue="Comments">
+                    <apex:outputText value="{!item.NumComments__c} Comments" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

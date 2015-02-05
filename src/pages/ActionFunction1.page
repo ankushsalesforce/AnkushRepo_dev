@@ -1,0 +1,36 @@
+<apex:page standardcontroller="Account" extensions="ActionFunction1" tabStyle="Account">
+    <apex:form id="form1">
+       <apex:pageBlock > 
+            <apex:outputLabel for="inptCheckBox" value="Check this box to call Controller method from js using ActionFunction" style="color:green;"></apex:outputLabel> 
+            <apex:inputcheckbox onclick="javaScrpt1()" id="inptCheckBox" />
+       </apex:pageBlock> 
+      <apex:outputText id="outputtxtId"></apex:outputText>
+    </apex:form> 
+    
+    <script >
+      function javaScrpt1(){
+        if(confirm("Press a button")){
+             Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ActionFunction1.ActionFunMethode1}',
+             function(result, event){
+            if(event.status) {
+                alert('document.getElementById("{!$Component.form1.outputtxtId}").value:-->' + document.getElementById("{!$Component.form1.outputtxtId}"));
+                if(document.getElementById("{!$Component.form1.outputtxtId}").value == result)
+                {alert('12');
+                    document.getElementById("{!$Component.form1.outputtxtId}").innerHTML = "";                        
+                }else{alert('32');
+                    document.getElementById("{!$Component.form1.outputtxtId}").innerHTML = result;
+                     alert(result);
+                }
+                
+            }
+        }
+      ); 
+    }
+    else{alert('hi');
+       
+      }
+      }
+    </script>
+     
+</apex:page>

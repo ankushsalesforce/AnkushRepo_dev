@@ -1,0 +1,19 @@
+{
+    "username": "ankushsalesf@gmail.com", 
+    "project_name": "ankushsalesforce", 
+    "org_url": "", 
+    "namespace": "AnkushTest", 
+    "metadata_container": "1dci0000000JWeUAAW", 
+    "environment": "production", 
+    "workspace": "C:\\mavens", 
+    "id": "EWU6XZ2R2SJOCLHJICVREWRLZJFBCPGE", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}

@@ -1,0 +1,20 @@
+<apex:page controller="CompareRecords" sidebar="true">
+    <apex:form >
+        <apex:pageBlock title="EnterIDs" >
+            <apex:pageblockSection columns="2">
+                <apex:pageBlockSectionItem Id="Object" dataTitle="Object Name ">
+                    Ojbect<apex:inputText value="{!objects}" label="Enter Value" title="object name"/>
+                 </apex:pageBlockSectionItem>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="2">    
+                <apex:pageBlockSectionItem Id="idOfFirstSection">
+                    idOffirstRecord <apex:inputText value="{!idOffirstRecord}" label="Enter Value" title="EnterID"/>
+                 </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="idOfSeconedSection">
+                   idOfSeconedRecord <apex:inputText value="{!idOfSeconedRecord}" label="Enter Value" title="EnterID"/>
+                 </apex:pageBlockSectionItem> 
+                 <apex:commandButton value="getRecords" action="{!Records}"/>                
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

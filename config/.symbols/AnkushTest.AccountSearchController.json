@@ -1,0 +1,52 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "AccountSearchController", 
+            "parameters": [
+                {
+                    "type": "StandardController", 
+                    "name": "controller"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 2
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": "AnkushTest", 
+    "name": "AccountSearchController", 
+    "tableDeclaration": {
+        "type": "AccountSearchController", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 1
+        }, 
+        "name": "AccountSearchController"
+    }, 
+    "key": "01pi0000006eBmqAAE", 
+    "variables": [
+        {
+            "type": "StandardController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 62, 
+                "line": 2
+            }, 
+            "name": "controller"
+        }
+    ], 
+    "id": "01pi0000006eBmqAAE", 
+    "methods": []
+}

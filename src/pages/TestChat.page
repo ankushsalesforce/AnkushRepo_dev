@@ -1,0 +1,17 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <script type='text/javascript' src='https://c.la2c1.salesforceliveagent.com/content/g/js/29.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la2c1.salesforceliveagent.com/chat', '572i0000000AyPw', '00Di0000000chVN');
+</script>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  <img id="liveagent_button_online_573i0000000B1al" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573i0000000B1al')" src="https://ankush123-developer-edition.na15.force.com/test/resource/1391173584000/OnlineChatImage" /><img id="liveagent_button_offline_573i0000000B1al" style="display: none; border: 0px none; " src="https://ankush123-developer-edition.na15.force.com/test/resource/1391173617000/OfflineChat" />
+<script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('573i0000000B1al', document.getElementById('liveagent_button_online_573i0000000B1al'));
+liveagent.showWhenOffline('573i0000000B1al', document.getElementById('liveagent_button_offline_573i0000000B1al'));
+});</script>
+
+</apex:page>

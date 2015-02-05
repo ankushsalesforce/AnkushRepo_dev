@@ -1,0 +1,15 @@
+<apex:page controller="popupwindow">
+    <apex:form >
+    <apex:inputtext value="{!textval}" id="it"/>
+    <apex:commandLink value="get" onclick="popup('/apex/childwindow')"/><br/>
+    <script>
+        function popup(url)
+        {
+            newwindow=window.open(url + '?id={!$Component.it}','name','width=400,height=400,top=0,toolbar=no,personalbar=no,location=no,directories=no,statusbar=no,menubar=no,status=no,re sizable=yes,left=60,screenX=60,top=100,screenY=100');
+            if (window.focus){
+                newwindow.focus()}
+        }
+    </script>
+    
+    </apex:form> 
+</apex:page>

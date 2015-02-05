@@ -1,0 +1,36 @@
+<apex:page controller="TwitterSearchUserController">
+  <apex:form >
+  <apex:pageBlock >
+  Enter Twitter User Name Here :<apex:inputText value="{!twitterUserName}"/> 
+      <apex:commandButton action="{!submittotwitter}" value="Search"/>
+      <apex:pageBlockTable value="{!root}" var="item" >
+                <apex:column >
+                    <apex:outputLink value="{!item.profile_image_url}" target="_blank" styleClass="InstagramLink">
+                        <apex:image value="{!item.profile_image_url}" styleClass="InstagramPicture" />
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="id">
+                    <apex:outputText value="{!item.id}" />
+                </apex:column>
+                <apex:column headerValue="listed_count">
+                    <apex:outputText value="{!item.listed_count}"/>
+                </apex:column>
+                <apex:column headerValue="screen_name">
+                    <apex:outputText value="{!item.screen_name}"/>
+                </apex:column>
+                <apex:column headerValue="url">
+                    <apex:outputText value="{!item.url}"/>
+                </apex:column>
+                <apex:column headerValue="followers_count">
+                    <apex:outputText value="{!item.followers_count}"/>
+                </apex:column>
+                <apex:column headerValue="friends_count">
+                    <apex:outputText value="{!item.friends_count}"/>
+                </apex:column>
+                <apex:column headerValue="statuses_count">
+                    <apex:outputText value="{!item.statuses_count}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+      </apex:pageBlock> 
+  </apex:form>
+</apex:page>

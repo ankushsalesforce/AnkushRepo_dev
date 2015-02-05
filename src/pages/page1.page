@@ -1,0 +1,25 @@
+<apex:page showHeader="false" standardController="Account" >
+<!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1><br>
+  </br>
+  <br> 
+  </br>
+  <apex:form >
+      <apex:pageBlock title="My Content" mode="edit">
+          <apex:pageBlockButtons location="Both" >
+              <apex:commandButton action="{!save}" value="Save"/>
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection title="Section 1" Columns="3">
+              <apex:inputField value="{!account.name}"/>
+        
+    </apex:pageBlockSection>
+      </apex:pageBlock>
+    
+  </apex:form>
+
+  <hr> </hr>
+  <br> </br>
+  <!-- End Default Content REMOVE THIS -->
+     <apex:detail relatedList="false"/> 
+
+  </apex:page>

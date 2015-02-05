@@ -1,0 +1,93 @@
+{
+    "properties": [
+        {
+            "modifiers": [], 
+            "name": "accountName", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 3
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "account", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 4
+            }, 
+            "type": "Account"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "AccountRemoter", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 5
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": "AnkushTest", 
+    "name": "AccountRemoter", 
+    "tableDeclaration": {
+        "type": "AccountRemoter", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "AccountRemoter"
+    }, 
+    "key": "01pi0000005tNjOAAU", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 45, 
+                "line": 8
+            }, 
+            "name": "accountName"
+        }
+    ], 
+    "id": "01pi0000005tNjOAAU", 
+    "methods": [
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "getAccount", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "accountName"
+                }
+            ], 
+            "visibility": "GLOBAL", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 8
+            }, 
+            "returnType": "Account", 
+            "type": null
+        }
+    ]
+}

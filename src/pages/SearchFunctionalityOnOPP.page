@@ -1,0 +1,21 @@
+<apex:page standardController="Opportunity" extensions="OpportunitySearch">
+    <apex:form >
+    
+        <apex:pageBlock >
+            <apex:inputText value="{!SearchValue}" id="theTextInput"/>
+            <apex:commandButton id="submit" value="Search" action="{!SearchQuote}" />
+            <apex:pageBlockTable value="{!Method}" var="item">
+                <apex:column value="{!item.name}"/> 
+                
+            </apex:pageBlockTable>
+          </apex:pageBlock>
+         
+          
+          <apex:pageBlock >
+                <apex:pageBlockTable value="{!SearchResults}" var="sd">
+                <apex:column value="{!sd.Name}"/>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>    
+        </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page Controller="phoneValidationOnField" showHeader="False">
+    <apex:form > 
+    <apex:inputText value="{!lead.phone}"/>
+    <apex:commandbutton action="{!Next1}" value="Next"/>    
+    </apex:form>
+
+</apex:page>

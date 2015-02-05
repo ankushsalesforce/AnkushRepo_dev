@@ -1,0 +1,39 @@
+<apex:page Controller="CopyFieldUsingRemoteActions">
+     <script>
+    function getRemoteAccount(){
+          alert(document.getElementById("j_id0:formid:pb:disc:myText").value);
+     var test1=document.getElementById("j_id0:formid:pb:disc:myText").value
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CopyFieldUsingRemoteActions.getAccountSLA}',test1,
+           
+            function(result, event){
+                if (event.status) {
+                    alert(document.getElementById("j_id0:formid:pb:acctSearch"));
+                    // Get DOM IDs for HTML and Visualforce elements like this
+                    document.getElementById("j_id0:formid:pb:acctSearch").innerHTML = result.AnkushTest__SLA__c ;       
+                } else if (event.type === 'exception') {
+                    document.getElementById("j_id0:formid:pb:acctSearch").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        alert(event.message);
+                } else {
+                    document.getElementById("j_id0:formid:pb:acctSearch").innerHTML = event.message;
+                     alert('FAil');
+                    
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    </script>
+    <apex:form id="formid">
+        <apex:pageBlock mode="edit" id="pb">
+
+            <apex:commandButton onclick="getRemoteAccount()" reRender="acctSearch" />
+             <apex:outputText id="acctSearch" label="Output"/>
+            <apex:pageBlockSection title="My Content Section" columns="2" id="disc" >
+                <apex:inputField value="{!account.AnkushTest__SLA__c }" id="myText" onblur="alert('hii');"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

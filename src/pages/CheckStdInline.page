@@ -1,0 +1,16 @@
+<apex:page standardController="Document"  id="thePage"> 
+    <apex:form id="theForm"> 
+        <apex:pageBlock id="thePageBlock"> 
+
+                                                <apex:outputField value="{!Document.Keywords }"/>
+              
+                                   <apex:inlineEditSupport event="ondblClick" 
+                        showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" /> 
+            <apex:pageBlockButtons > 
+                <apex:commandButton value="Edit" action="{!save}" id="editButton" />
+                <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+                <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton" />
+            </apex:pageBlockButtons> 
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

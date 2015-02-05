@@ -1,0 +1,7 @@
+<apex:page standardController="opportunity" extensions="opp" showHeader="false">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!data}" var="d">
+            <apex:column value="{!d.name}" headerValue="name"/>            
+        </apex:pageBlockTable>
+    </apex:pageBlock>   
+</apex:page>

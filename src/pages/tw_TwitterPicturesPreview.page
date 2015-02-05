@@ -1,0 +1,26 @@
+<apex:page standardController="Campaign" extensions="TwitterController" action="{!getSearchTag}">
+<style>
+    .TwitterPicture{
+        margin: 3px;
+        width: 75px;
+    }
+    .TwitterPictureProfile{
+        margin: 3px;
+        width: 35px;
+    }
+    .TwitterCaption{
+        word-break: break-word;
+        width: 250px;
+    }
+    </style>
+
+
+    <apex:repeat value="{!root.statuses}" var="item">
+          <apex:repeat value="{!item.entities.media}" var="items">
+                <apex:outputLink value="{!items.url}" target="_blank" >
+                        <apex:image value="{!items.media_url}" styleClass="TwitterPicture" />
+                </apex:outputLink>
+        </apex:repeat>
+    </apex:repeat>
+
+</apex:page>

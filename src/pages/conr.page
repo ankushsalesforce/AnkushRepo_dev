@@ -1,0 +1,52 @@
+<apex:page controller="Conr" sidebar="true" id="thePage">
+    <apex:form id="theForm">
+        <apex:pageBlock title="EnterIDs" >
+            <apex:pageblockSection columns="2">
+                <apex:pageBlockSectionItem Id="Object" dataTitle="Object Name ">
+                    Ojbect<apex:inputText value="{!objects}" label="Enter Value" title="object name"/>
+                 </apex:pageBlockSectionItem>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="2">    
+                <apex:pageBlockSectionItem Id="idOfFirstSection">
+                    idOffirstRecord <apex:inputText value="{!idOffirstRecord}" label="Enter Value" title="EnterID"/>
+                 </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="idOfSeconedSection">
+                   idOfSeconedRecord <apex:inputText value="{!idOfSeconedRecord}" label="Enter Value" title="EnterID"/>
+                 </apex:pageBlockSectionItem> 
+                 <apex:commandButton value="getRecords" action="{!Records}" reRender="display"/>                
+            </apex:pageblockSection>
+                    <apex:actionFunction name="actionFunName" action="{!test}" rendered="{!checkMapValues}"/>
+        </apex:pageBlock>
+                            
+         <script>
+            function getValue()
+              {
+              alert('hello');
+              actionFunName();
+              alert('hello1');
+              alert(document.getElementById("thePage:theForm:display:pageBlockOne:sectionId:columOfFields"));
+              var x=document.getElementById("thePage:theForm:display:pageBlockOne:columOfFields");
+              alert(x.value);
+
+                //document.getElementById("thePage:theForm:Change").style.backgroundColor = "red";  
+                
+                
+             }
+        </script>
+        <apex:outputPanel id="display">
+            <apex:pageBlock title="Fields" rendered="{!check}" id="pageBlockOne">
+                <apex:pageBlockSection columns="3" id="sectionId">
+                    <apex:pageblockTable value="{!listOfFields}" var="item">
+                        <apex:column value="{!item}" headerValue="Fields" id="columOfFields" onmouseover="getValue()"/>                       
+                    </apex:pageblockTable>                
+                    <apex:pageblockTable value="{!stringsss1}" var="item">
+                        <apex:column value="{!item}" headerValue="Seconed Record"/>                       
+                    </apex:pageblockTable>
+                    <apex:pageBlockTable value="{!stringsss}" var="item" >
+                        <apex:column value="{!item}" headerValue="First Record"/>
+                    </apex:pageBlockTable>  
+                </apex:pageBlockSection>           
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

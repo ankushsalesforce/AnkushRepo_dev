@@ -1,0 +1,41 @@
+<apex:page StandardController="Contact" extensions="CreateContctss">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Contact Section" columns="2">
+                <apex:pageBlockSectionItem >
+                  1.  Name <apex:inputtext value="{!name1}" id="LastName1"/>
+                    </apex:pageBlocksectionItem>
+                    <apex:pageBlockSectionItem >
+                    Email <apex:inputtext value="{!Email1}" id="Email"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                  2.  Name <apex:inputtext value="{!name2}" id="LastName2"/>
+                    </apex:pageBlocksectionItem>
+                    <apex:pageBlockSectionItem >
+                    Email <apex:inputtext value="{!Email2}"  id="Email2"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                  3.  Name <apex:inputtext value="{!name3}" id="LastName3"/>
+                    </apex:pageBlocksectionItem>
+                    <apex:pageBlockSectionItem >
+                    Email <apex:inputtext value="{!Email3}" id="Email3"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                  4.  Name <apex:inputtext value="{!name4}" id="LastName4"/>
+                    </apex:pageBlocksectionItem>
+                    <apex:pageBlockSectionItem >
+                    Email <apex:inputtext value="{!Email4}" id="Email4"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                  5.  Name <apex:inputtext value="{!name5}" id="LastName5"/>
+                    </apex:pageBlocksectionItem>
+                    <apex:pageBlockSectionItem >
+                    Email <apex:inputtext value="{!Email5}" id="Email5"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlocksection>
+                <apex:pageblockButtons >
+                    <apex:commandButton value="Add Contact" action="{!redirectPage}" />
+                </apex:pageblockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

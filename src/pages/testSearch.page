@@ -1,0 +1,19 @@
+<apex:page standardController="Account" extensions="Contact_Searcher">
+  <apex:form >
+   <apex:detail subject="{!Account.id}" relatedList="false" title="false" inlineEdit="true"/>
+    <apex:pageBlock title="Contact Search">
+      
+      <h2> Enter Search String&nbsp;&nbsp;</h2 >
+      <apex:inputText id="searchBox" value="{!searchValue}" />
+      <apex:commandButton id="submit" value="Search" action="{!searchContacts}" />
+    </apex:pageBlock>
+    <apex:pageBlock title="Search Results">
+      <apex:pageBlockTable value="{!searchResults}" var="c">
+        <apex:column headerValue="{!$objecttype.Contact.fields.Name.Label}">
+                <apex:outputLink value="/{!c.id}">{!c.name}</apex:outputLink>
+            </apex:column> 
+        <apex:column value="{!c.Name}" />
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

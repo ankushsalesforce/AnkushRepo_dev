@@ -1,0 +1,24 @@
+<apex:page controller="popupwindow" sidebar="false">
+    <apex:form >
+    <script>
+    function populateValues(val)
+    {
+    	try{
+    		alert(val);
+    		window.parent.opener.document.getElementById('{!$CurrentPageReference.parameters.id}_lkid').value=val;
+    		//window.parent.opener.location.href = 
+            //window.parent.opener.location.href.document.getElementById('{!$CurrentPageReference.parameters.id}').value=val;
+                                       
+            window.close();
+    	}catch(e){}
+    }
+
+    </script>
+        <apex:dataTable value="{!accounts}" var="a" cellPadding="4" border="1">
+                <apex:column headervalue="Account Name">
+                    <apex:commandLink onclick="populateValues('{!a.Name}')">
+                    <apex:param name="name1" value="{!a.Name}"/>
+                {!a.Name}</apex:commandLink></apex:column>
+            </apex:dataTable>
+    </apex:form>
+</apex:page>

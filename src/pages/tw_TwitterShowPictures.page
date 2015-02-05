@@ -1,0 +1,89 @@
+<apex:page standardController="Campaign" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
+    <head>
+        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+        
+        <title>Twitter for Better PLC</title>
+        <link href="{!URLFOR($Resource.TwitterPublicPageCSS, 'css/instagrame.css')}" rel="stylesheet" />
+        <link href="{!URLFOR($Resource.TwitterPublicPageCSS, 'css/bootstrap.min.css')}" rel="stylesheet" />
+        <link href="{!URLFOR($Resource.TwitterPublicPageCSS, 'css/font-awesome.min.css')}" rel="stylesheet" />
+        
+        <apex:stylesheet value="{!URLFOR($Resource.TwitterPublicPageCSS, 'css/instagrame.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.TwitterPublicPageCSS, 'css/bootstrap.min.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.TwitterPublicPageCSS, 'css/font-awesome.min.css')}"/>
+        <apex:stylesheet value="{!$Resource.twitterPublic}" />
+        <script type="text/javascript">
+            var addthis_config = {"data_track_addressbar":true};
+        </script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538522ff5f3f8160"></script>
+    </head>
+    <body>
+<div class="main-wrapper">
+  
+  <div class="col-md-12">
+    <div class="banner-better-plc">
+      <div class="better-logo-align"> <img src="{!URLFOR($Resource.TwitterPublicPageCSS, 'img/better.png')}"/> </div>
+      <h1>making what matters <span style="font-family:'aaux_proboldregular';" >better</span></h1>
+      <div class="logo-align"> <img src="{!URLFOR($Resource.TwitterPublicPageCSS, 'img/twitter-featured_opt2.png')}"/> </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="col-md-12">
+    <apex:repeat value="{!Campaign.Twitter_Contents__r}" var="picture">
+        <div class="col-md-3 marg-bottom main-img-wrap">
+            
+                <div class="xoverlay x-simple"> 
+                
+                    <a href="{!picture.URLContent__c}" class="profile-shot" target="_blank">
+                    <img class="x-img-main" src="{!picture.URL__c}"/>
+                    </a>
+                    
+                    <div class="xoverlay-box">
+                      
+                        <div class="xoverlay-data x-icon-lr-zoom"> 
+                            
+                            <apex:outputText value='<div id="linksDiv" class="addthis_toolbox addthis_default_style iconPos" addthis:url="{!picture.URLContent__c}">
+                                <span class="x-circle x-white">
+                                    <a class="addthis_button_facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    
+                                </span>
+                                <span class="x-circle x-white">
+                                   
+                                    <a class="addthis_button_twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </span>
+                                <span class="x-circle x-white">
+                                     <a class="addthis_button_linkedin" target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                   
+                                </span>
+                            </div>' escape="false"/>
+                            
+                       </div>
+                       
+                       
+                        <div class="titles-hover">
+                            <h2 class="hashTag">{!picture.Text__c}</h2>
+                        </div>
+                        <div class="username-title">
+                            <h2 class="hashTag2">{!picture.Text__c}</h2>
+                            <div class="user-pic-inst"> 
+                                <img src="{!picture.UserPicURL__c}"/> 
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+
+                </div>
+        </div>
+    </apex:repeat>
+  </div>
+</div>
+</body>
+</apex:page>

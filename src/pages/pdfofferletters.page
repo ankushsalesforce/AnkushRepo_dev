@@ -1,0 +1,12 @@
+<apex:page standardController="Candidates__c" showHeader="false" renderAs="pdf" >
+    <apex:pageBlock title="OFFER LETTER">
+        This is Offer letters for selected candidates mentiones below
+        <p></p>
+        <apex:pageBlockSection title="Candidates"/>
+        <apex:pageBlockTable value="{!Candidates__c}" var="sn">
+            <apex:column value="{!sn.fIRST_nAME__c}" />
+            
+        </apex:pageBlockTable>
+        She is hired for 
+    </apex:pageBlock>
+</apex:page>

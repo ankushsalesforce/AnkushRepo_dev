@@ -1,0 +1,17 @@
+<apex:page controller="QuoteLineItemss"  >
+    <apex:form >
+        <apex:pageBlock >
+        
+           Amount= <apex:inputText value="{!Amt}" label="Amount" />
+           <apex:pageBlockButtons >
+              <apex:commandButton action="{!save}" value="Save" id="theButton"/>
+           </apex:pageBlockButtons>
+        
+
+    <apex:pageMessages > </apex:pageMessages>
+   
+
+    
+    </apex:pageBlock>
+  </apex:form>  
+</apex:page>

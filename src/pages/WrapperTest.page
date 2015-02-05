@@ -1,0 +1,17 @@
+<apex:page standardController="Account" extensions="AccountWrapper" >
+  <apex:form >
+   <apex:pageBlock >
+   
+    <apex:pageBlockTable value="{!Cont}" var="it" >
+          <apex:column >
+                    
+                    <apex:inputCheckbox value="{!it.selected}"/>
+                </apex:column>
+                
+                <apex:column value="{!it.con.Name}" />
+                
+        
+    </apex:pageBlockTable>
+  </apex:pageBlock>  
+ </apex:form>
+</apex:page>
