@@ -11,7 +11,7 @@ public class AccountSearchController{
     
     public PageReference Records(){
         check= true; 
-        method();
+        booleanCheck();
         return null;
     }
     
@@ -24,21 +24,23 @@ public class AccountSearchController{
     }
     
     public PageReference redirectPage(){
-        ID = apexpages.currentpage().getparameters().get('name1');
-        pagereference pr= new pagereference('/apex/CreateContac?name1='+ID).setRedirect(true);
+        ID = apexpages.currentpage().getparameters().get('IdOfAccount');
+        pagereference pr= new pagereference('/apex/CreateContac?IdOfAccount='+ID).setRedirect(true);
         return pr;
     }
     
-    public PageReference redirectPageToContact(){
+    public PageReference redirectPageToCreateAccount(){
         pagereference pr= new pagereference('/apex/CreateAccounts').setRedirect(true);
         return pr;
     }
     
-    public void method(){
-        getAccounts();
+    private void booleanCheck(){
         if(accountList.size() == 0){
         System.debug(accountList.size());
             show= true;
         }
     }
+    
+    
+    
  }
