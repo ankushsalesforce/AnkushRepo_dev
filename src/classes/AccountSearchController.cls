@@ -1,10 +1,12 @@
 public class AccountSearchController{
     public boolean check { get; set; }
     public boolean Show { get; set; }
+    public boolean ShowRecords { get; set; }
     Public string ID{get;set;}
     public AccountSearchController(ApexPages.StandardController controller){
          check = false;
-         Show = False;         
+         Show = False;
+         ShowRecords = false;         
     }
     public String accountName{get; set;}
     List<Account> accountList;
@@ -35,12 +37,19 @@ public class AccountSearchController{
     }
     
     private void booleanCheck(){
-        if(accountList.size() == 0){
-        System.debug(accountList.size());
+        System.debug('==');
+        getAccounts();
+        
+       if(accountList.size() == 0){
+        System.debug(accountList);
+       // System.debug(accountList.size());
             show= true;
+            ShowRecords = false;
+            
+        } else{
+            ShowRecords = True;
+            show= false;
         }
-    }
-    
-    
-    
+        
+    }  
  }

@@ -1,12 +1,29 @@
 <apex:page StandardController="Contact" extensions="CreateContctss">
     <apex:form >
+    <!--<apex:pageMessage strength="3"  />-->
+    
+    <apex:outputPanel id="OutMessage">
+           <apex:pageMessages rendered="{!errorMessage}"/> 
+    </apex:outputPanel> 
         <apex:pageBlock >
-            <apex:pageBlockSection title="Contact Section" columns="2">
-                 <apex:repeat value="{!contactList}" var="con" id="theRepeat">
+                 <!--<apex:repeat value="{!contactList}" var="con" id="theRepeat">
                     <apex:inputtext value="{!con.LastName}" id="theValue"/>
                     <apex:inputtext value="{!con.email}" id="idOFEmail"/>
-                 </apex:repeat>
-            </apex:pageBlocksection>
+                 </apex:repeat>-->
+          <table>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+            </tr>
+                <apex:repeat value="{!contactList}" var="con">
+             <tr>
+                    <td><apex:inputtext value="{!con.Firstname}" id="idOFFirstname"/></td>
+                    <td><apex:inputtext value="{!con.LastName}" id="theValue"/></td>                    
+                    <td><apex:inputtext value="{!con.email}" id="idOFEmail"/></td>
+                </tr>
+            </apex:repeat>
+        </table>
                 <apex:pageblockButtons >
                     <apex:commandButton value="Add Contact" action="{!redirectPage}" />
                 </apex:pageblockButtons>
